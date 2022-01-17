@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.ga.main.service.mapper.MainMapper">
+        
+    <select id="loginAction" parameterType="com.ga.common.LoginVO" resultType="com.ga.common.LoginVO">
+        select
+            mbrId as user_id
+            , mbrPw as user_pw
+            , mbr_name as user_name
+        from member
+        where 1=1
+        and mbrId = #{user_id}
+        and mbrPw = #{user_pw}
+    </select>
+    
+</mapper>
